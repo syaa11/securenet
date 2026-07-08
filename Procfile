@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath . -b 0.0.0.0:$PORT app:app

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}SecureNet | Cyber Security Articles{% endblock %}
+
+{% block content %}
+
+<section class="articles-section">
+    <div class="container">
+
+        <!-- Header -->
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand"><i class="fa-solid fa-newspaper"></i> Briefings</span>
+            <h2>Cyber Security <span class="gradient-text">Articles</span></h2>
+            <p>Kumpulan artikel pilihan untuk meningkatkan kesadaran keamanan digital Anda.</p>
+        </div>
+
+        <!-- Filter / Search -->
+        <div class="articles-toolbar" data-aos="fade-up">
+            <div class="search-wrap">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Cari artikel ..." class="search-input">
+            </div>
+            <div class="filter-wrap">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="password">Password</button>
+                <button class="filter-btn" data-filter="phishing">Phishing</button>
+                <button class="filter-btn" data-filter="malware">Malware</button>
+                <button class="filter-btn" data-filter="network">Network</button>
+            </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid" id="articlesGrid" data-aos="fade-up">
+            <!-- Artikel akan di-generate oleh JavaScript -->
+        </div>
+
+        <!-- Load More / Pagination -->
+        <div class="articles-loadmore" id="loadMoreWrap">
+            <button class="btn btn-secondary-custom" id="loadMoreBtn">
+                <i class="fa-solid fa-rotate"></i> Load More
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- MODAL DETAIL ARTIKEL -->
+<!-- ===================================================== -->
+
+<div class="article-modal" id="articleModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-body" id="modalBody">
+            <!-- konten detail akan diisi oleh JS -->
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/articles.js') }}"></script>
+{% endblock %}

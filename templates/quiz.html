@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}SecureNet | Cyber Security Quiz{% endblock %}
+
+{% block content %}
+
+<section class="quiz-section">
+    <div class="container">
+
+        <!-- Header -->
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand"><i class="fa-solid fa-clipboard-question"></i> Briefing</span>
+            <h2>Cyber Security <span class="gradient-text">Assessment</span></h2>
+            <p>Uji pengetahuan Anda tentang keamanan digital melalui serangkaian pertanyaan.</p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="quiz-container" data-aos="fade-up">
+
+            <!-- Status Bar -->
+            <div class="quiz-status" id="quizStatus">
+                <div class="status-left">
+                    <span class="q-counter" id="qCounter">Question 0 / 0</span>
+                    <span class="q-tag" id="qTag">—</span>
+                </div>
+                <div class="status-right">
+                    <span class="score-badge" id="scoreBadge">Score: 0</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="quiz-progress">
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill" style="width:0%;"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-card" id="questionCard">
+                <div class="question-header">
+                    <span class="q-number" id="qNumber">Q1</span>
+                    <span class="q-category" id="qCategory">General</span>
+                </div>
+                <h3 class="question-text" id="questionText">Loading questions...</h3>
+                <div class="options-grid" id="optionsGrid">
+                    <!-- options akan di-generate oleh JS -->
+                </div>
+                <button class="btn btn-primary-custom next-btn" id="nextBtn" disabled>
+                    Next <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Result Card (hidden awal) -->
+            <div class="result-card final-result" id="resultCard" style="display:none;">
+                <div class="result-icon" id="resultIcon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h2 id="resultTitle">Your Score</h2>
+                <div class="score-circle-big">
+                    <span id="finalScore">0</span>
+                    <span class="score-label">/ 100</span>
+                </div>
+                <p class="result-message" id="resultMessage">Great job!</p>
+                <div class="result-actions">
+                    <a href="/quiz" class="btn btn-secondary-custom"><i class="fa-solid fa-rotate"></i> Retry</a>
+                    <a href="/tools" class="btn btn-primary-custom"><i class="fa-solid fa-screwdriver-wrench"></i> Explore Tools</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}
