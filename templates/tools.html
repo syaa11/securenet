@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}SecureNet | Security Tools{% endblock %}
+
+{% block content %}
+
+<section class="tools-section">
+    <div class="container">
+
+        <!-- Header -->
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand"><i class="fa-solid fa-screwdriver-wrench"></i> Case Files</span>
+            <h2>Security <span class="gradient-text">Toolkit</span></h2>
+            <p>Analisis, generate, dan deteksi ancaman digital dalam satu dashboard.</p>
+        </div>
+
+        <!-- Layout -->
+        <div class="tools-layout" data-aos="fade-up">
+
+            <!-- Sidebar -->
+            <aside class="tools-sidebar">
+                <div class="sidebar-brand">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span>Tools</span>
+                </div>
+                <nav>
+                    <button class="tool-btn active" data-tab="password">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Password Check</span>
+                    </button>
+                    <button class="tool-btn" data-tab="generator">
+                        <i class="fa-solid fa-key"></i>
+                        <span>Generator</span>
+                    </button>
+                    <button class="tool-btn" data-tab="url">
+                        <i class="fa-solid fa-link"></i>
+                        <span>URL Scanner</span>
+                    </button>
+                    <button class="tool-btn" data-tab="phishing">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Phishing Detect</span>
+                    </button>
+                </nav>
+                <div class="sidebar-status">
+                    <span class="status-dot"></span>
+                    <span>System Online</span>
+                </div>
+            </aside>
+
+            <!-- Content -->
+            <main class="tools-content">
+
+                <!-- Score Card -->
+                <div class="score-card">
+                    <div class="score-left">
+                        <span class="score-label">Security Index</span>
+                        <div class="score-number">
+                            <span id="overallScore">0</span>
+                            <span class="score-max">/ 100</span>
+                        </div>
+                    </div>
+                    <div class="score-right">
+                        <div class="score-progress">
+                            <div class="progress-track">
+                                <div class="progress-fill" id="scoreFill" style="width:0%;"></div>
+                            </div>
+                            <span class="score-status" id="overallStatus">—</span>
+                        </div>
+                        <div class="score-dot" id="scoreDot"></div>
+                    </div>
+                </div>
+
+                <!-- PANEL 1: Password Checker -->
+                <div class="tool-panel active" id="password">
+                    <div class="panel-head">
+                        <div class="panel-icon"><i class="fa-solid fa-lock"></i></div>
+                        <div>
+                            <h3>Password Strength Analyzer</h3>
+                            <p>Masukkan password untuk mengukur tingkat kekuatannya.</p>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group-tools">
+                            <input type="password" id="passwordInput" placeholder="Type or paste password ...">
+                            <button class="btn btn-primary-custom" id="checkPassword">
+                                <i class="fa-solid fa-arrow-right"></i> Analyze
+                            </button>
+                        </div>
+                        <div id="passwordResult" class="result-container"></div>
+                    </div>
+                </div>
+
+                <!-- PANEL 2: Generator -->
+                <div class="tool-panel" id="generator">
+                    <div class="panel-head">
+                        <div class="panel-icon"><i class="fa-solid fa-key"></i></div>
+                        <div>
+                            <h3>Secure Password Generator</h3>
+                            <p>Buat password acak dengan tingkat keamanan tinggi.</p>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="gen-options">
+                            <div class="gen-field">
+                                <label>Length</label>
+                                <input type="number" id="passwordLength" value="16" min="8" max="64">
+                            </div>
+                            <div class="gen-checks">
+                                <label><input type="checkbox" id="uppercase" checked> <span>A-Z</span></label>
+                                <label><input type="checkbox" id="lowercase" checked> <span>a-z</span></label>
+                                <label><input type="checkbox" id="numbers" checked> <span>0-9</span></label>
+                                <label><input type="checkbox" id="symbols" checked> <span>#&amp;!</span></label>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary-custom" id="generatePassword">
+                            <i class="fa-solid fa-rotate"></i> Generate
+                        </button>
+                        <div id="generatorResult" class="result-container"></div>
+                    </div>
+                </div>
+
+                <!-- PANEL 3: URL Checker -->
+                <div class="tool-panel" id="url">
+                    <div class="panel-head">
+                        <div class="panel-icon"><i class="fa-solid fa-link"></i></div>
+                        <div>
+                            <h3>URL Security Scanner</h3>
+                            <p>Periksa apakah tautan aman atau mengandung ancaman.</p>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group-tools">
+                            <input type="text" id="urlInput" placeholder="https://example.com ...">
+                            <button class="btn btn-primary-custom" id="checkURL">
+                                <i class="fa-solid fa-scan"></i> Scan
+                            </button>
+                        </div>
+                        <div id="urlResult" class="result-container"></div>
+                    </div>
+                </div>
+
+                <!-- PANEL 4: Phishing Detector -->
+                <div class="tool-panel" id="phishing">
+                    <div class="panel-head">
+                        <div class="panel-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h3>Phishing Email Detector</h3>
+                            <p>Tempel isi email untuk mendeteksi indikasi phishing.</p>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <textarea id="emailInput" rows="5" placeholder="Paste email content here ..."></textarea>
+                        <button class="btn btn-primary-custom" id="detectPhishing">
+                            <i class="fa-solid fa-bolt"></i> Analyze
+                        </button>
+                        <div id="phishingResult" class="result-container"></div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/tools.js') }}"></script>
+{% endblock %}
