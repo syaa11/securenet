@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}SecureNet | Cyber Security Articles{% endblock %}
+
+{% block content %}
+
+<section class="articles-section">
+    <div class="container">
+
+        <!-- Header dengan Status -->
+        <div class="section-header center" data-aos="fade-up">
+            <div class="header-status">
+                <span class="status-dot live"></span>
+                <span class="status-label">SYSTEM: <strong>SECURE</strong></span>
+                <span class="status-divider">|</span>
+                <span class="status-articles"><i class="fa-regular fa-newspaper"></i> <span id="articleCount">0</span> Articles</span>
+            </div>
+            <span class="tag tag--brand"><i class="fa-solid fa-newspaper"></i> Briefings</span>
+            <h2>Cyber Security <span class="gradient-text">Articles</span></h2>
+            <p>Kumpulan artikel pilihan untuk meningkatkan kesadaran keamanan digital Anda.</p>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="articles-toolbar" data-aos="fade-up">
+            <div class="search-wrap">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Cari artikel ..." class="search-input">
+                <button class="search-clear" id="searchClear" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="filter-wrap">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="password">Password</button>
+                <button class="filter-btn" data-filter="phishing">Phishing</button>
+                <button class="filter-btn" data-filter="malware">Malware</button>
+                <button class="filter-btn" data-filter="network">Network</button>
+            </div>
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="grid" title="Grid View"><i class="fa-solid fa-grip"></i></button>
+                <button class="view-btn" data-view="list" title="List View"><i class="fa-solid fa-list"></i></button>
+            </div>
+        </div>
+
+        <!-- Result Count -->
+        <div class="result-count" id="resultCount">
+            <span id="resultText">Showing <strong>3</strong> articles</span>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid" id="articlesGrid" data-aos="fade-up">
+            <!-- Artikel akan di-generate oleh JavaScript -->
+            <div class="skeleton-grid" id="skeletonGrid">
+                <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div></div>
+                <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div></div>
+                <div class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div></div>
+            </div>
+        </div>
+
+        <!-- Load More -->
+        <div class="articles-loadmore" id="loadMoreWrap">
+            <button class="btn btn-secondary-custom" id="loadMoreBtn">
+                <i class="fa-solid fa-rotate"></i> Load More
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- MODAL DETAIL ARTIKEL -->
+<!-- ===================================================== -->
+
+<div class="article-modal" id="articleModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-body" id="modalBody">
+            <!-- konten detail akan diisi oleh JS -->
+        </div>
+        <div class="modal-footer">
+            <button class="modal-share" id="modalShare"><i class="fa-regular fa-share-from-square"></i> Share</button>
+            <button class="modal-back" id="modalBack"><i class="fa-solid fa-arrow-up"></i> Back to Top</button>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/articles.js') }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Search clear button
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+    if (searchInput && searchClear) {
+        searchInput.addEventListener('input', function() {
+            searchClear.style.display = this.value.length > 0 ? 'flex' : 'none';
+        });
+        searchClear.addEventListener('click', function() {
+            searchInput.value = '';
+            searchInput.focus();
+            searchClear.style.display = 'none';
+            searchInput.dispatchEvent(new Event('input'));
+        });
+    }
+
+    // View toggle
+    document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const view = this.dataset.view;
+            document.getElementById('articlesGrid').dataset.view = view;
+        });
+    });
+
+    // Modal share
+    document.getElementById('modalShare')?.addEventListener('click', function() {
+        const title = document.querySelector('.modal-article h2')?.textContent || 'SecureNet Article';
+        if (navigator.share) {
+            navigator.share({
+                title: title,
+                text: 'Baca artikel ini di SecureNet',
+                url: window.location.href
+            }).catch(() => {});
+        } else {
+            navigator.clipboard.writeText(window.location.href)
+                .then(() => showToast('✅ Link copied to clipboard!'))
+                .catch(() => {});
+        }
+    });
+
+    // Modal back to top
+    document.getElementById('modalBack')?.addEventListener('click', function() {
+        document.querySelector('.modal-content').scrollTop = 0;
+    });
+});
+
+function showToast(message) {
+    const existing = document.querySelector('.custom-toast');
+    if (existing) existing.remove();
+    const toast = document.createElement('div');
+    toast.className = 'custom-toast';
+    toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${message}`;
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+</script>
+
+{% endblock %}

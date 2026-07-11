@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}SecureNet | Cyber Security Quiz{% endblock %}
+
+{% block content %}
+
+<section class="quiz-section">
+    <div class="container">
+
+        <!-- Header dengan Status -->
+        <div class="section-header center" data-aos="fade-up">
+            <div class="header-status">
+                <span class="status-dot live"></span>
+                <span class="status-label">SYSTEM: <strong>SECURE</strong></span>
+                <span class="status-divider">|</span>
+                <span class="status-quiz"><i class="fa-regular fa-clipboard"></i> <span id="quizCount">6</span> Categories</span>
+            </div>
+            <span class="tag tag--brand"><i class="fa-solid fa-clipboard-question"></i> Assessment</span>
+            <h2>Cyber Security <span class="gradient-text">Quiz</span></h2>
+            <p>Pilih kategori dan uji pengetahuan Anda tentang keamanan digital.</p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="quiz-wrapper" data-aos="fade-up">
+
+<!-- ====== SELECT CATEGORY ====== -->
+<div class="quiz-selector" id="quizSelector">
+    <div class="selector-header">
+        <div class="selector-icon"><i class="fa-solid fa-folder-open"></i></div>
+        <h3>Pilih Topik Quiz</h3>
+        <p>Pilih salah satu kategori di bawah untuk memulai</p>
+    </div>
+    <div class="selector-grid">
+        <button class="selector-btn" data-category="phishing">
+            <div class="s-icon"><i class="fa-solid fa-envelope"></i></div>
+            <span>Phishing</span>
+            <small>10 pertanyaan</small>
+        </button>
+        <button class="selector-btn" data-category="malware">
+            <div class="s-icon"><i class="fa-solid fa-bug"></i></div>
+            <span>Malware</span>
+            <small>10 pertanyaan</small>
+        </button>
+        <button class="selector-btn" data-category="password">
+            <div class="s-icon"><i class="fa-solid fa-lock"></i></div>
+            <span>Password</span>
+            <small>10 pertanyaan</small>
+        </button>
+        <button class="selector-btn" data-category="network">
+            <div class="s-icon"><i class="fa-solid fa-globe"></i></div>
+            <span>Network</span>
+            <small>10 pertanyaan</small>
+        </button>
+        <button class="selector-btn" data-category="general">
+            <div class="s-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <span>General</span>
+            <small>10 pertanyaan</small>
+        </button>
+        <button class="selector-btn" data-category="mixed">
+            <div class="s-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <span>Mixed</span>
+            <small>15 pertanyaan</small>
+        </button>
+    </div>
+</div>
+            <!-- ====== QUIZ AREA ====== -->
+            <div class="quiz-area" id="quizArea" style="display:none;">
+
+                <!-- Status Bar -->
+                <div class="quiz-status" id="quizStatus">
+                    <div class="status-left">
+                        <span class="q-counter" id="qCounter">0 / 0</span>
+                        <span class="q-tag" id="qTag">—</span>
+                    </div>
+                    <div class="status-right">
+                        <span class="timer-badge" id="timerBadge">
+                            <i class="fa-solid fa-clock"></i> 
+                            <span id="timerDisplay">10</span>s
+                        </span>
+                        <span class="score-badge" id="scoreBadge">
+                            <i class="fa-solid fa-star"></i> 0
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="quiz-progress">
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill" style="width:0%;"></div>
+                    </div>
+                </div>
+
+                <!-- Question Card -->
+                <div class="question-card" id="questionCard">
+                    <div class="question-header">
+                        <span class="q-number" id="qNumber">Q1</span>
+                        <span class="q-category" id="qCategory">General</span>
+                    </div>
+                    <h3 class="question-text" id="questionText">Loading questions...</h3>
+                    <div class="options-grid" id="optionsGrid"></div>
+                    <div class="question-footer">
+                        <span class="question-hint" id="questionHint">
+                            <i class="fa-solid fa-lightbulb"></i> Pilih satu jawaban
+                        </span>
+                        <button class="btn btn-primary-custom next-btn" id="nextBtn" disabled>
+                            Next <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result Card -->
+                <div class="result-card final-result" id="resultCard" style="display:none;">
+                    <div class="result-icon" id="resultIcon"><i class="fa-solid fa-trophy"></i></div>
+                    <h2 id="resultTitle">Your Score</h2>
+                    <div class="score-circle-big">
+                        <span id="finalScore">0</span>
+                        <span class="score-label">%</span>
+                    </div>
+                    <p class="result-message" id="resultMessage">Great job!</p>
+                    <div class="result-stats" id="resultStats">
+                        <div class="stat-item correct">
+                            <i class="fa-solid fa-check-circle"></i> 
+                            <span id="correctCount">0</span> Benar
+                        </div>
+                        <div class="stat-item wrong">
+                            <i class="fa-solid fa-xmark-circle"></i> 
+                            <span id="wrongCount">0</span> Salah
+                        </div>
+                        <div class="stat-item time">
+                            <i class="fa-solid fa-clock"></i> 
+                            <span id="totalTime">0</span>s
+                        </div>
+                    </div>
+                    <div class="result-actions">
+                        <button class="btn btn-secondary-custom" id="retryBtn">
+                            <i class="fa-solid fa-rotate"></i> Retry
+                        </button>
+                        <a href="/tools" class="btn btn-primary-custom">
+                            <i class="fa-solid fa-screwdriver-wrench"></i> Tools
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Update category count
+    const countEl = document.getElementById('quizCount');
+    if (countEl) {
+        const btns = document.querySelectorAll('.selector-btn');
+        countEl.textContent = btns.length;
+    }
+});
+</script>
+
+{% endblock %}

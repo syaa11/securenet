@@ -1,0 +1,1063 @@
+{% extends "base.html" %}
+
+{% block title %}SecureNet | Home{% endblock %}
+
+{% block content %}
+
+<!-- ===================================================== -->
+<!-- HERO -->
+<!-- ===================================================== -->
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-grid">
+
+            <!-- LEFT -->
+            <div class="hero-left" data-aos="fade-up">
+                <div class="hero-status-badge">
+                    <span class="status-dot live"></span>
+                    <span class="status-label">SYSTEM STATUS: <strong>OPERATIONAL</strong></span>
+                    <span class="status-threat">THREAT LEVEL: <span class="low">LOW</span></span>
+                </div>
+                <span class="hero-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Security Awareness Platform
+                </span>
+                <h1 class="hero-title">
+                    Protect Your
+                    <span>Digital Life</span>
+                </h1>
+                <p class="hero-description">
+                    SecureNet merupakan platform pembelajaran keamanan digital
+                    yang membantu pengguna memahami ancaman siber melalui
+                    berbagai tools interaktif seperti Password Checker,
+                    URL Checker, Phishing Detector, dan Cyber Security Quiz.
+                </p>
+                <div class="hero-buttons">
+                    <a href="/tools" class="btn btn-primary-custom">
+                        Get Started <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#features" class="btn btn-secondary-custom">
+                        <i class="fa-solid fa-folder-open"></i>
+                        View Case Files
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT — TERMINAL -->
+            <div class="hero-right" data-aos="fade-up" data-aos-delay="150">
+                <div class="terminal corner-frame">
+                    <div class="terminal-head">
+                        <span></span><span></span><span></span>
+                        <span class="file-label">securenet@session:~/status</span>
+                    </div>
+                    <div class="terminal-body" id="terminalBody">
+                        <!-- akan diisi oleh JS typing effect -->
+                    </div>
+                </div>
+                <!-- Floating Shield Icon -->
+                <div class="floating-shield">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- THREAT FEED TICKER -->
+<!-- ===================================================== -->
+
+<section class="ticker" style="padding-top:0;padding-bottom:0;">
+    <div class="ticker-track" id="tickerTrack">
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>95% of breaches trace back to <b>human error</b></div>
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>81% of breaches involve a <b>weak password</b></div>
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>Cyber threats operate on a <b>24/7</b> basis</div>
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>SecureNet has published <b>100+ security tips</b></div>
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>Phishing remains the top attack vector for <b>social engineering</b></div>
+        <!-- duplicate for seamless loop -->
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>95% of breaches trace back to <b>human error</b></div>
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>81% of breaches involve a <b>weak password</b></div>
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>Cyber threats operate on a <b>24/7</b> basis</div>
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>SecureNet has published <b>100+ security tips</b></div>
+        <div class="ticker-item"><i class="fa-solid fa-triangle-exclamation pulse-icon"></i>Phishing remains the top attack vector for <b>social engineering</b></div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- FIELD REPORT (STATISTICS) -->
+<!-- ===================================================== -->
+
+<section class="statistics">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand">Field Report</span>
+            <h2>Cyber Security Facts</h2>
+            <p>Data berikut menunjukkan pentingnya menjaga keamanan digital di era modern.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stats-card" data-aos="fade-up" data-count="95">
+                <span class="tag">Root Cause</span>
+                <h3><span class="count-number">0</span>%</h3>
+                <p>of incidents involve human error</p>
+                <div class="stats-progress"><div class="stats-fill" style="width:0%;"></div></div>
+            </div>
+            <div class="stats-card" data-aos="fade-up" data-aos-delay="100" data-count="81">
+                <span class="tag">Credential Risk</span>
+                <h3><span class="count-number">0</span>%</h3>
+                <p>of breaches use a weak password</p>
+                <div class="stats-progress"><div class="stats-fill" style="width:0%;"></div></div>
+            </div>
+            <div class="stats-card" data-aos="fade-up" data-aos-delay="200" data-count="24">
+                <span class="tag">Exposure Window</span>
+                <h3><span class="count-number">0</span>/7</h3>
+                <p>active cyber threat monitoring</p>
+                <div class="stats-progress"><div class="stats-fill" style="width:0%;"></div></div>
+            </div>
+            <div class="stats-card" data-aos="fade-up" data-aos-delay="300" data-count="100">
+                <span class="tag">Knowledge Base</span>
+                <h3><span class="count-number">0</span>+</h3>
+                <p>security tips &amp; guides published</p>
+                <div class="stats-progress"><div class="stats-fill" style="width:0%;"></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- MODULES (FEATURES) -->
+<!-- ===================================================== -->
+
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand">Modules</span>
+            <h2>Why Choose SecureNet?</h2>
+            <p>Platform ini menyediakan pembelajaran keamanan digital yang modern, mudah dipahami, dan interaktif.</p>
+        </div>
+        <div class="feature-grid">
+            <div class="case-file glow-card" data-aos="fade-up">
+                <div class="case-file__head">
+                    <span class="case-id">MODULE // LEARN</span>
+                </div>
+                <div class="case-file__icon"><i class="fa-solid fa-user-shield"></i></div>
+                <h3>Interactive Learning</h3>
+                <p class="redact"><span class="redact__bar"></span>Belajar keamanan digital melalui simulasi.</p>
+            </div>
+            <div class="case-file glow-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="case-file__head">
+                    <span class="case-id">MODULE // STACK</span>
+                </div>
+                <div class="case-file__icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Python Powered</h3>
+                <p class="redact"><span class="redact__bar"></span>Dibangun menggunakan Python Flask.</p>
+            </div>
+            <div class="case-file glow-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="case-file__head">
+                    <span class="case-id">MODULE // ACCESS</span>
+                </div>
+                <div class="case-file__icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>Responsive Design</h3>
+                <p class="redact"><span class="redact__bar"></span>Nyaman digunakan di Desktop maupun Mobile.</p>
+            </div>
+            <div class="case-file glow-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="case-file__head">
+                    <span class="case-id">MODULE // CORE</span>
+                </div>
+                <div class="case-file__icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Security Focused</h3>
+                <p class="redact"><span class="redact__bar"></span>Membantu meningkatkan kesadaran keamanan digital.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- PROTOCOL (LEARNING JOURNEY) -->
+<!-- ===================================================== -->
+
+<section class="journey">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand">Protocol</span>
+            <h2>Start Your Cyber Security Journey</h2>
+        </div>
+        <div class="journey-grid">
+            <div class="journey-step" data-aos="fade-up">
+                <div class="step-number"></div>
+                <h4>Read Articles</h4>
+                <span class="cmd">open articles/</span>
+            </div>
+            <div class="journey-step" data-aos="fade-up" data-aos-delay="100">
+                <div class="step-number"></div>
+                <h4>Use Security Tools</h4>
+                <span class="cmd">run tools/</span>
+            </div>
+            <div class="journey-step" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-number"></div>
+                <h4>Take Quiz</h4>
+                <span class="cmd">start quiz/</span>
+            </div>
+            <div class="journey-step" data-aos="fade-up" data-aos-delay="300">
+                <div class="step-number"></div>
+                <h4>Improve Your Security</h4>
+                <span class="cmd">apply changes/</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- SECURITY TOOLS — CASE FILES -->
+<!-- ===================================================== -->
+
+<section class="tools-preview" id="tools">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand">Case Files</span>
+            <h2>Explore Our Interactive Tools</h2>
+            <p>Gunakan berbagai tools interaktif untuk meningkatkan keamanan digital Anda.</p>
+        </div>
+        <div class="tools-grid">
+            <div class="case-file glow-card" data-aos="fade-up">
+                <div class="case-file__head">
+                    <span class="case-id">CASE // 01</span>
+                    <span class="case-stamp">ACTIVE</span>
+                </div>
+                <div class="case-file__icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Password Checker</h3>
+                <p class="redact"><span class="redact__bar"></span>Analisis kekuatan password menggunakan algoritma Python.</p>
+                <a href="/tools" class="case-file__link">Open File <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="case-file glow-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="case-file__head">
+                    <span class="case-id">CASE // 02</span>
+                    <span class="case-stamp">ACTIVE</span>
+                </div>
+                <div class="case-file__icon"><i class="fa-solid fa-key"></i></div>
+                <h3>Password Generator</h3>
+                <p class="redact"><span class="redact__bar"></span>Buat password yang aman secara otomatis.</p>
+                <a href="/tools" class="case-file__link">Open File <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="case-file glow-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="case-file__head">
+                    <span class="case-id">CASE // 03</span>
+                    <span class="case-stamp">ACTIVE</span>
+                </div>
+                <div class="case-file__icon"><i class="fa-solid fa-globe"></i></div>
+                <h3>URL Checker</h3>
+                <p class="redact"><span class="redact__bar"></span>Analisis keamanan URL sebelum dibuka.</p>
+                <a href="/tools" class="case-file__link">Open File <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="case-file glow-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="case-file__head">
+                    <span class="case-id">CASE // 04</span>
+                    <span class="case-stamp alert">BETA</span>
+                </div>
+                <div class="case-file__icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <h3>Phishing Detector</h3>
+                <p class="redact"><span class="redact__bar"></span>Deteksi email phishing dan social engineering.</p>
+                <a href="/tools" class="case-file__link">Open File <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- LATEST ARTICLES -->
+<!-- ===================================================== -->
+
+<section class="articles-preview">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand">Briefings</span>
+            <h2>Latest Cyber Security Articles</h2>
+            <p>Pelajari keamanan digital melalui artikel pilihan.</p>
+        </div>
+        <div class="articles-grid">
+            <article class="article-card" data-aos="fade-up">
+                <div class="thumb">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&auto=format" alt="Password Security">
+                    <span class="case-stamp">FILED</span>
+                </div>
+                <div class="article-content">
+                    <span class="case-id">FILE // PASSWORD SECURITY</span>
+                    <h3>How To Create Strong Password</h3>
+                    <p>Tips membuat password yang kuat dan aman.</p>
+                    <a href="/articles">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="article-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="thumb">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&auto=format" alt="Phishing">
+                    <span class="case-stamp">FILED</span>
+                </div>
+                <div class="article-content">
+                    <span class="case-id">FILE // PHISHING</span>
+                    <h3>Recognizing Phishing Email</h3>
+                    <p>Cara mengenali email yang mencurigakan.</p>
+                    <a href="/articles">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="article-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="thumb">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop&auto=format" alt="Malware">
+                    <span class="case-stamp">FILED</span>
+                </div>
+                <div class="article-content">
+                    <span class="case-id">FILE // MALWARE</span>
+                    <h3>Protect Yourself From Malware</h3>
+                    <p>Langkah sederhana mencegah malware.</p>
+                    <a href="/articles">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- FAQ — DEBRIEF -->
+<!-- ===================================================== -->
+
+<section class="faq">
+    <div class="container">
+        <div class="section-header center" data-aos="fade-up">
+            <span class="tag tag--brand">Debrief</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container" data-aos="fade-up">
+            <details>
+                <summary><span class="q-tag">Q01</span>Apa itu Phishing?</summary>
+                <p>Phishing merupakan teknik penipuan yang bertujuan mencuri informasi pribadi pengguna.</p>
+            </details>
+            <details>
+                <summary><span class="q-tag">Q02</span>Mengapa Password Harus Kuat?</summary>
+                <p>Password yang kuat lebih sulit ditebak oleh hacker.</p>
+            </details>
+            <details>
+                <summary><span class="q-tag">Q03</span>Apa itu URL Checker?</summary>
+                <p>Tool untuk mengecek apakah suatu website aman dikunjungi.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- CALL TO ACTION — BRIEFING -->
+<!-- ===================================================== -->
+
+<section class="cta">
+    <div class="container">
+        <div class="cta-box corner-frame" data-aos="fade-up">
+            <span class="tag tag--signal">Action Required</span>
+            <h2>Ready To Improve Your Cyber Security?</h2>
+            <p>Mulai gunakan berbagai tools SecureNet dan tingkatkan keamanan digital Anda.</p>
+            <div class="cta-button">
+                <a href="/tools" class="btn btn-primary-custom">Start Learning</a>
+                <a href="/quiz" class="btn btn-secondary-custom">Take Quiz</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- SCRIPTS TAMBAHAN UNTUK INDEX -->
+<!-- ===================================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // =============================================
+    // 1. TYPING TERMINAL
+    // =============================================
+    const terminalLines = [
+        { text: 'initializing secure_connection...', prompt: '$' },
+        { text: 'firewall ................... ACTIVE', prompt: null, highlight: 'ACTIVE', highlightClass: 'ok' },
+        { text: 'encryption ................. AES-256', prompt: null, highlight: 'AES-256', highlightClass: 'ok' },
+        { text: 'url_scanner ................ READY', prompt: null, highlight: 'READY', highlightClass: 'ok' },
+        { text: 'phishing_detector .......... READY', prompt: null, highlight: 'READY', highlightClass: 'ok' },
+        { text: 'status: SYSTEM SECURE', prompt: '>', highlight: 'SYSTEM SECURE', highlightClass: 'ok' }
+    ];
+
+    const terminalBody = document.getElementById('terminalBody');
+    if (terminalBody) {
+        let lineIndex = 0;
+        let charIndex = 0;
+        let currentLine = null;
+
+        function typeLine() {
+            if (lineIndex >= terminalLines.length) {
+                // add cursor blink at end
+                const cursorSpan = document.createElement('span');
+                cursorSpan.className = 'cursor';
+                terminalBody.appendChild(cursorSpan);
+                return;
+            }
+
+            const lineData = terminalLines[lineIndex];
+            const fullText = lineData.text;
+            const promptChar = lineData.prompt;
+
+            // If not started typing this line yet
+            if (charIndex === 0) {
+                // Create new line element
+                const p = document.createElement('p');
+                p.className = 'line';
+                if (promptChar) {
+                    const promptSpan = document.createElement('span');
+                    promptSpan.className = 'prompt';
+                    promptSpan.textContent = promptChar + ' ';
+                    p.appendChild(promptSpan);
+                }
+                terminalBody.appendChild(p);
+                currentLine = p;
+            }
+
+            if (charIndex < fullText.length) {
+                // Add next character
+                const char = fullText[charIndex];
+                const textNode = document.createTextNode(char);
+                currentLine.appendChild(textNode);
+                charIndex++;
+                setTimeout(typeLine, 40 + Math.random() * 30);
+            } else {
+                // Line complete - check if we need to highlight
+                if (lineData.highlight) {
+                    // Wrap highlighted part in span
+                    const content = currentLine.innerHTML;
+                    const parts = content.split(lineData.highlight);
+                    if (parts.length > 1) {
+                        currentLine.innerHTML = parts[0] + '<span class="' + lineData.highlightClass + '">' + lineData.highlight + '</span>' + parts.slice(1).join('');
+                    }
+                }
+                // Move to next line after pause
+                lineIndex++;
+                charIndex = 0;
+                setTimeout(typeLine, 200);
+            }
+        }
+
+        // Start typing after a small delay
+        setTimeout(typeLine, 500);
+    }
+
+    // =============================================
+    // 2. COUNT-UP STATISTICS + Progress Bar
+    // =============================================
+    const counters = document.querySelectorAll('.count-number');
+    let counted = false;
+
+    function animateCounters() {
+        counters.forEach(counter => {
+            const parent = counter.closest('.stats-card');
+            if (!parent) return;
+            const target = parseInt(parent.dataset.count) || 0;
+            if (isNaN(target)) return;
+            const duration = 1500;
+            const start = performance.now();
+
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const currentVal = Math.round(eased * target);
+                counter.textContent = currentVal;
+
+                // Update progress bar
+                const fill = parent.querySelector('.stats-fill');
+                if (fill) fill.style.width = (currentVal / target * 100) + '%';
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                    if (fill) fill.style.width = '100%';
+                }
+            }
+            requestAnimationFrame(updateCounter);
+        });
+        counted = true;
+    }
+
+    const statsSection = document.querySelector('.statistics');
+    if (statsSection && !counted) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counted) {
+                    animateCounters();
+                }
+            });
+        }, { threshold: 0.3 });
+        observer.observe(statsSection);
+    }
+
+    // =============================================
+    // 3. SMOOTH SCROLL
+    // =============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+                const offsetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - 80;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // =============================================
+    // 4. TICKER PAUSE ON HOVER
+    // =============================================
+    const tickerTrack = document.getElementById('tickerTrack');
+    if (tickerTrack) {
+        tickerTrack.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        tickerTrack.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+    }
+
+    // =============================================
+    // 5. PROGRESS BAR ON SCROLL
+    // =============================================
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+    }
+
+    // =============================================
+    // 6. FLOATING SHIELD PULSE
+    // =============================================
+    const shield = document.querySelector('.floating-shield');
+    if (shield) {
+        setInterval(() => {
+            shield.classList.toggle('pulse');
+        }, 2000);
+    }
+
+});
+</script>
+<!-- ===================================================== -->
+<!-- FITUR TAMBAHAN PREMIUM -->
+<!-- ===================================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // =============================================
+    // 1. MOUSE FOLLOWER GLOW
+    // =============================================
+    const glow = document.createElement('div');
+    glow.className = 'mouse-glow';
+    document.body.appendChild(glow);
+
+    let mouseX = -100,
+        mouseY = -100;
+    let glowX = -100,
+        glowY = -100;
+
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateGlow() {
+        glowX += (mouseX - glowX) * 0.08;
+        glowY += (mouseY - glowY) * 0.08;
+        glow.style.left = glowX - 150 + 'px';
+        glow.style.top = glowY - 150 + 'px';
+        requestAnimationFrame(animateGlow);
+    }
+    animateGlow();
+
+    // Sembunyikan glow di mobile
+    if (window.innerWidth < 768) {
+        glow.style.display = 'none';
+    }
+
+    // =============================================
+    // 2. GRADIENT ANIMATED BORDER — tambahkan class
+    // =============================================
+    document.querySelectorAll('.case-file.glow-card').forEach(card => {
+        card.classList.add('animated-border');
+    });
+
+    // =============================================
+    // 3. 3D TILT EFFECT (menggunakan vanilla-tilt)
+    // =============================================
+    // Load library dari CDN
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js';
+    script.onload = function() {
+        VanillaTilt.init(document.querySelectorAll('.case-file.glow-card, .article-card, .stats-card'), {
+            max: 8,
+            speed: 400,
+            glare: true,
+            'max-glare': 0.15,
+            scale: 1.02,
+            gyroscope: true,
+        });
+    };
+    document.head.appendChild(script);
+
+});
+</script>
+
+<style>
+    /* =========================================================
+       MOUSE FOLLOWER GLOW
+    ========================================================= */
+    .mouse-glow {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9990;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(62, 123, 250, 0.06), transparent 70%);
+        transition: none;
+        will-change: transform;
+        mix-blend-mode: screen;
+    }
+
+    @media (max-width: 768px) {
+        .mouse-glow {
+            display: none;
+        }
+    }
+
+    /* =========================================================
+       GRADIENT ANIMATED BORDER
+    ========================================================= */
+    .animated-border {
+        position: relative;
+        overflow: hidden;
+    }
+    .animated-border::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: var(--radius-lg);
+        padding: 2px;
+        background: linear-gradient(135deg, var(--brand), var(--signal), var(--alert), var(--brand));
+        background-size: 300% 300%;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        animation: borderGlow 4s ease-in-out infinite;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+    .animated-border:hover::before {
+        opacity: 1;
+    }
+    .animated-border:hover {
+        border-color: transparent !important;
+    }
+
+    @keyframes borderGlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* =========================================================
+       3D TILT — tambahan styling
+    ========================================================= */
+    .case-file.glow-card,
+    .article-card,
+    .stats-card {
+        transform-style: preserve-3d;
+        transition: transform 0.1s ease;
+    }
+
+    /* Glare effect dari vanilla-tilt */
+    .case-file.glow-card .glare,
+    .article-card .glare,
+    .stats-card .glare {
+        border-radius: var(--radius-lg);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+    @media (max-width: 768px) {
+        .animated-border::before {
+            display: none;
+        }
+        .mouse-glow {
+            display: none !important;
+        }
+    }
+</style>
+<style>
+    /* additional inline styles for premium effects */
+    .count-number {
+        transition: none;
+    }
+    .terminal-body .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 16px;
+        background: var(--signal);
+        vertical-align: middle;
+        animation: blink 1s step-end infinite;
+        margin-left: 2px;
+    }
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+    .ticker-track {
+        animation: tickerScroll 30s linear infinite;
+        display: flex;
+        width: max-content;
+    }
+    .ticker-track:hover {
+        animation-play-state: paused;
+    }
+    @keyframes tickerScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    /* Hero Status Badge */
+    .hero-status-badge {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px 18px;
+        margin-bottom: 18px;
+        padding: 6px 16px 6px 12px;
+        background: rgba(0,0,0,0.3);
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--ink-dim);
+        backdrop-filter: blur(6px);
+    }
+    .hero-status-badge .status-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--signal);
+        box-shadow: 0 0 12px rgba(0,200,117,0.5);
+        animation: dot-pulse 1.5s ease-in-out infinite;
+    }
+    .hero-status-badge .status-dot.live {
+        background: var(--signal);
+    }
+    .hero-status-badge .status-label strong {
+        color: var(--signal);
+        font-weight: 700;
+    }
+    .hero-status-badge .status-threat .low {
+        color: var(--signal);
+        font-weight: 700;
+    }
+
+    @keyframes dot-pulse {
+        0%,100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* Floating Shield */
+    .floating-shield {
+        position: absolute;
+        top: -20px;
+        right: -30px;
+        width: 60px;
+        height: 60px;
+        background: var(--panel);
+        border: 1px solid var(--line-strong);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: var(--brand);
+        box-shadow: 0 0 40px rgba(62,123,250,0.15);
+        animation: float-shield 4s ease-in-out infinite;
+        z-index: 2;
+    }
+    .floating-shield.pulse {
+        animation: float-shield 4s ease-in-out infinite, shield-pulse 2s ease-in-out infinite;
+    }
+    @keyframes float-shield {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes shield-pulse {
+        0%,100% { box-shadow: 0 0 20px rgba(62,123,250,0.1); }
+        50% { box-shadow: 0 0 60px rgba(62,123,250,0.3); }
+    }
+
+    /* Glow Cards */
+    .glow-card {
+        transition: all 0.35s ease;
+    }
+    .glow-card:hover {
+        border-color: var(--brand) !important;
+        box-shadow: 0 0 30px rgba(62,123,250,0.15), inset 0 0 30px rgba(62,123,250,0.03) !important;
+    }
+
+    /* Stats Progress Bar */
+    .stats-progress {
+        width: 100%;
+        height: 3px;
+        background: var(--line);
+        border-radius: 3px;
+        margin-top: 14px;
+        overflow: hidden;
+    }
+    .stats-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--brand), var(--signal));
+        border-radius: 3px;
+        transition: width 0.1s ease;
+    }
+
+    /* Pulse icon in ticker */
+    .pulse-icon {
+        animation: icon-pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes icon-pulse {
+        0%,100% { opacity: 0.7; transform: scale(0.9); }
+        50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    /* Hero title glow */
+    .hero-title span {
+        text-shadow: 0 0 30px rgba(62,123,250,0.2);
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+        .floating-shield {
+            display: none;
+        }
+        .hero-status-badge {
+            font-size: 10px;
+            padding: 4px 12px;
+            gap: 8px;
+        }
+    }
+</style>
+<!-- ===================================================== -->
+<!-- TESTIMONIAL — AUTO-PLAY (hanya di Home) -->
+<!-- ===================================================== -->
+
+<section class="testimonial-section" id="testimonials" data-aos="fade-up">
+    <div class="container">
+        <div class="section-header center">
+            <span class="tag tag--brand"><i class="fa-solid fa-comment"></i> Testimonials</span>
+            <h2>What Our <span class="gradient-text">Users Say</span></h2>
+            <p>Feedback dari pengguna yang telah merasakan manfaat SecureNet.</p>
+        </div>
+        <div class="testimonial-wrapper">
+            <div class="testimonial-slide active" data-index="0">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <blockquote>"SecureNet benar-benar membuka mata saya tentang pentingnya keamanan digital. Tools yang disediakan sangat mudah digunakan dan informatif!"</blockquote>
+                <div class="testimonial-author">
+                    <div class="avatar">A</div>
+                    <div><span class="name">Andi Pratama</span> — Mahasiswa</div>
+                </div>
+            </div>
+            <div class="testimonial-slide" data-index="1">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <blockquote>"Saya sering menjadi korban phishing, tapi setelah menggunakan Phishing Detector dari SecureNet, saya jadi lebih waspada. Terima kasih!"</blockquote>
+                <div class="testimonial-author">
+                    <div class="avatar">S</div>
+                    <div><span class="name">Siti Rahma</span> — Karyawan Swasta</div>
+                </div>
+            </div>
+            <div class="testimonial-slide" data-index="2">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <blockquote>"Password Checker sangat membantu saya membuat password yang kuat. Sekarang akun saya terasa lebih aman. Highly recommended!"</blockquote>
+                <div class="testimonial-author">
+                    <div class="avatar">R</div>
+                    <div><span class="name">Rizky Fauzan</span> — Freelancer</div>
+                </div>
+            </div>
+            <div class="testimonial-slide" data-index="3">
+                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <blockquote>"Desainnya keren banget, feels like a real security dashboard! Edukasi keamanan digital jadi lebih menyenangkan."</blockquote>
+                <div class="testimonial-author">
+                    <div class="avatar">D</div>
+                    <div><span class="name">Dewi Lestari</span> — IT Enthusiast</div>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonialDots">
+                <button class="active" data-index="0"></button>
+                <button data-index="1"></button>
+                <button data-index="2"></button>
+                <button data-index="3"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- TESTIMONIAL SCRIPT -->
+<!-- ===================================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // ===== TESTIMONIAL AUTO-PLAY =====
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dotsContainer = document.getElementById('testimonialDots');
+    let currentSlide = 0;
+    let testimonialInterval = null;
+
+    if (!slides.length || !dotsContainer) return;
+
+    function showSlide(index) {
+        slides.forEach((s, i) => {
+            s.classList.toggle('active', i === index);
+        });
+        dotsContainer.querySelectorAll('button').forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+        });
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }
+
+    function startTestimonialAutoPlay() {
+        if (testimonialInterval) clearInterval(testimonialInterval);
+        testimonialInterval = setInterval(nextSlide, 5000);
+    }
+
+    dotsContainer.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            showSlide(index);
+            clearInterval(testimonialInterval);
+            startTestimonialAutoPlay();
+        });
+    });
+
+    startTestimonialAutoPlay();
+});
+</script>
+
+<style>
+/* =========================================================
+   TESTIMONIAL STYLES (hanya untuk Home)
+========================================================= */
+.testimonial-section {
+    padding: 80px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.01);
+    position: relative;
+    z-index: 1;
+}
+.testimonial-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+}
+.testimonial-slide {
+    display: none;
+    text-align: center;
+    padding: 20px 30px;
+    animation: fadeSlideUp 0.6s ease forwards;
+}
+.testimonial-slide.active {
+    display: block;
+}
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.testimonial-slide .quote-icon {
+    font-size: 28px;
+    color: var(--brand);
+    opacity: 0.3;
+    margin-bottom: 12px;
+}
+.testimonial-slide blockquote {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--ink);
+    font-style: italic;
+    margin: 0 0 16px;
+}
+.testimonial-slide .testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--ink-dim);
+}
+.testimonial-slide .testimonial-author .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+}
+.testimonial-slide .testimonial-author .name {
+    color: var(--ink);
+    font-weight: 600;
+}
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+.testimonial-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: transparent;
+    cursor: pointer;
+    transition: all .3s ease;
+    padding: 0;
+}
+.testimonial-dots button.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    box-shadow: 0 0 20px rgba(62, 123, 250, 0.2);
+    width: 28px;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .testimonial-slide blockquote {
+        font-size: 17px;
+    }
+    .testimonial-slide {
+        padding: 10px 16px;
+    }
+    .testimonial-section {
+        padding: 50px 0;
+    }
+}
+</style>
+
+{% endblock %}
